@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <link rel="icon" href="city_logo.jpg" type="image/jpeg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>島山県新田市役所 公式ホームページ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background-color: #f4f4f4;
+            color: #333;
+            font-family: "MS Gothic", "Osaka", sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        #header {
+            background-color: #D8BFD8; 
+            color: white;
+            padding: 30px 50px;
+            border-bottom: 5px solid #ffcc00;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        #header img.logo {
+            width: 100px;
+            height: auto;
+            margin-right: 30px;
+            mix-blend-mode: multiply;
+        }
+
+        #header .titles {
+            text-align: left;
+        }
+
+        #header h1 {
+            font-size: 42px;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        #header p {
+            font-size: 14px;
+            margin: 5px 0 0 0;
+        }
+
+        .main-wrapper {
+            display: flex;
+            width: 90%;
+            max-width: 1100px;
+            margin: 30px auto;
+            gap: 30px;
+            align-items: stretch; 
+        }
+
+        .side-menu {
+            width: 260px; 
+            flex-shrink: 0;
+        }
+
+        .side-menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            align-content: space-between;
+        }
+ 
+        .side-menu li {
+            background-color: white;
+            border: 1px solid #ccc;
+            aspect-ratio: 1 / 1; 
+            overflow: hidden;   
+            transition: all 0.1s;
+        }
+
+        .side-menu li:active {
+            transform: scale(0.92);
+            background-color: #eee;
+        }
+
+        .side-menu a {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 100%;
+            text-decoration: none !important; 
+            color: #333 !important;
+        }
+
+        .side-menu i {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: #555;
+        }
+
+        .side-menu span {
+            display: block;
+            width: 100%;
+            height: 32px;
+            line-height: 32px;
+            text-align: center;
+            font-size: 11px;
+            font-weight: bold;
+            background-color: #f5f5f5;
+            border-top: 1px solid #eee;
+        }
+
+        .container {
+            flex-grow: 1;
+            background: white;
+            padding: 30px;
+            border: 1px solid #ccc;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .notice-badge {
+            background: red;
+            color: white;
+            padding: 2px 8px;
+            font-weight: bold;
+            font-size: 12px;
+        }
+
+        .info-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .info-list li {
+            padding: 8px 0;
+            border-bottom: 1px dashed #eee;
+        }
+
+        .city-photo {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border: 1px solid #ccc;
+            margin: 20px 0;
+            display: block;
+        }
+    
+        .search-box button:active {
+            transform: scale(0.92); 
+            background-color: #ccc; 
+            transition: all 0.1s ease;
+        }
+        
+        
+        .news-section li a:hover {
+            color: #d32f2f !important;   
+            text-decoration: underline; 
+        }
+
+        .news-section li a {
+            color: #333;
+            text-decoration: none;
+            transition: color 0.2s ease; 
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #page-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        #search-results-page {
+            padding-top: 20px; 
+            width: 100%;
+        }
+
+                footer {
+            width: 90%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 15px 0 30px;
+            text-align: right;
+            font-size: 11px;
+            color: #888;
+        }
+
+    
+        @media (max-width: 1000px) {
+            #header {
+                padding: 20px;
+                flex-wrap: wrap;
+            }
+            #header img.logo {
+                width: 72px;
+                margin-right: 16px;
+            }
+            #header h1 {
+                font-size: 26px;
+            }
+            #header p {
+                font-size: 12px;
+            }
+            .search-box {
+                position: static !important;
+                margin: 16px;
+                justify-content: flex-end;
+            }
+            .search-box input {
+                width: min(65vw, 240px) !important;
+            }
+            .main-wrapper {
+                width: auto;
+                margin: 16px;
+                flex-direction: column;
+                gap: 16px;
+            }
+            .side-menu {
+                width: 100%;
+            }
+            .side-menu ul {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            .container {
+                padding: 16px;
+            }
+            .news-section li {
+                flex-wrap: wrap;
+                gap: 6px !important;
+            }
+            footer {
+                width: auto !important;
+                max-width: none !important;
+                margin: 0 16px !important;
+                padding: 15px 0 30px !important;
+                text-align: right !important;
+            }
+            #page-container {
+                width: 100% !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div id="header">
+        <img src="city_logo.jpg" alt="Logo" class="logo">
+        <div class="titles">
+            <h1>島山県新田市役所</h1>
+            <p>Nitta City Office, Shimayama Prefecture</p >
+        </div>
+    </div>
+    
+    <div class="search-box" style="position: absolute; top: 55px; right: max(5%, calc((100% - 1100px) / 2)); display: flex; gap: 5px;">
+    <input type="text" id="searchInput" placeholder="キーワード検索" style="padding: 8px 12px; font-size: 16px; width: 200px; border: 1px solid #ccc;">
+    <button id="searchBtn" style="padding: 8px 15px; font-size: 16px; cursor: pointer; background-color: #eee; border: 1px solid #999;">検索</button>
+</div>
+
+
+    
+<div class="main-wrapper">
+        <nav class="side-menu">
+        <ul>
+        <li><a href="#"><i class="fa-solid fa-landmark"></i><span>市政データベース</span></a ></li>
+        <li><a href="#"><i class="fa-solid fa-bullhorn"></i><span>ニュース・広報</span></a ></li>
+        <li><a href="#"><i class="fa-solid fa-users"></i><span>市民生活ガイド</span></a ></li>
+        <li><a href="#"><i class="fa-solid fa-industry"></i><span>産業・ビジネス</span></a ></li>
+        <li><a href="#"><i class="fa-solid fa-map-location-dot"></i><span>観光情報</span></a ></li>
+        <li><a href="#"><i class="fa-solid fa-briefcase"></i><span>職員採用情報</span></a ></li>
+    </ul>
+
+</nav>
+
+<div class="content-column">
+            
+            <div class="container">
+                <h2><span class="notice-badge">重要</span> 平成12年度（2000年）4月1日 組織改正のお知らせ</h2>
+                <p>新田市役所公式ホームページへようこそ。本日より新年度を迎え、一部の行政組織およびオンライン窓口を再編しました。</p >
+            </div>
+            
+            <div style="height: 30px;"></div>
+
+
+            <div class="container">
+            <div class="news-section" style="margin-bottom: 40px;">
+    <h3 style="border-left: 5px solid #D8BFD8; padding-left: 10px; margin-bottom: 20px;">📰 新着ニュース</h3>
+    <ul style="list-style: none; padding: 0; margin: 0;">
+        <li style="padding: 10px 0; border-bottom: 1px dashed #ccc; display: flex; gap: 15px;">
+            <span style="color: #888; font-family: monospace;">2000.04.01</span>
+            <a href="#">平成12年度 新田市定例記者会見資料を公開しました</a >
+        </li>
+        <li style="padding: 10px 0; border-bottom: 1px dashed #ccc; display: flex; gap: 15px;">
+            <span style="color: #888; font-family: monospace;">2000.03.28</span>
+            <a href="#">【重要】市役所職員を名乗る不審メールにご注意ください</a >
+        </li>
+        <li style="padding: 10px 0; border-bottom: 1px dashed #ccc; display: flex; gap: 15px;">
+            <span style="color: #888; font-family: monospace;">2000.03.25</span>
+            <a href="#">新田中央公園の改修工事に伴う一部利用制限について</a >
+        </li>
+        <li style="padding: 10px 0; border-bottom: 1px dashed #ccc; display: flex; gap: 15px;">
+            <span style="color: #888; font-family: monospace;">2000.03.20</span>
+            <a href="#">春の交通安全キャンペーン実施のお知らせ</a >
+        </li>
+    </ul>
+    
+     <div style="text-align: right; padding: 10px 0px;">
+    <a href="news_list" style="text-decoration: underline; color: #333; font-size: 14px; cursor: pointer;">
+        ▶ ニュース一覧
+    </a >
+</div>
+
+</div>
+
+<hr style="border: 0; border-top: 2px solid #555; margin: 30px 0;">
+
+                <h3 style="border-left: 5px solid #D8BFD8; padding-left: 10px; margin-bottom: 20px;">📊 市の概要</h3>
+                <ul class="info-list">
+                    <li><strong>市制施行日：</strong> 昭和46年（1971年）4月1日</li>
+                    <li><strong>推計人口：</strong> 138,404人</li>
+                    <li><strong>主要産業：</strong> 重工業、港湾貿易、電力エネルギー...</li>
+                </ul>
+                
+                <hr style="border: 0; border-top: 2px solid #555; margin: 30px 0;">
+
+                <h3 style="border-left: 5px solid #D8BFD8; padding-left: 10px; margin-bottom: 20px;">📬 お問い合わせ窓口</h3>
+                <p><strong>市民課電子メール：</strong>
+                city.nitta@outlook.jp</p >
+            </div>
+            
+            </div> </div> <footer>
+        <p>Copyright © Shimayama Prefecture Nitta City. All Rights Reserved.</p >
+        <p>管理番号：SHIMA-NITTA-138-LOG</p >
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const sInput = document.getElementById('searchInput');
+    const sBtn = document.getElementById('searchBtn');
+
+    if (sBtn && sInput) {
+        sBtn.onclick = function() {
+            const val = sInput.value.trim();
+            if (val === "") return;
+            window.location.href = 'search?q=' + encodeURIComponent(val);
+        };
+        sInput.addEventListener('keydown', function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                sBtn.click();
+            }
+        });
+    }
+});
+</script>
+
+</body>
+</html>
